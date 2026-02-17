@@ -16,10 +16,15 @@ Source Data (CSV) → AWS S3 → Snowflake (Staging) → Bronze Layer → Silver
 # Technology Stack
 
 Cloud Data Warehouse: Snowflake
+
 Transformation Layer: dbt (Data Build Tool)
+
 Cloud Storage: AWS S3 (implied)
+
 Version Control: Git
+
 Python: 3.12+
+
 Key dbt Features:
 Incremental models
 Snapshots (SCD Type 2)
