@@ -1,5 +1,6 @@
 # Airbnb-Snowflake-DBT-AWS-DataEngg-Project
 Build end to end data engg project using these tools DBT,AWS and SNOWFLAKE.
+
 # Overview
 This project implements a complete end-to-end data engineering pipeline for Airbnb data using modern cloud technologies. The solution demonstrates best practices in data warehousing, transformation, and analytics using Snowflake, dbt (Data Build Tool), and AWS.
 
@@ -26,10 +27,11 @@ Version Control: Git
 Python: 3.12+
 
 Key dbt Features:
-Incremental models
-Snapshots (SCD Type 2)
-Custom macros
-Jinja templating
+
+Incremental models,
+Snapshots (SCD Type 2),
+Custom macros,
+Jinja templating,
 Testing and documentation
 
 # Data Model
@@ -126,20 +128,25 @@ AWS_DBT_Snowflake/
     └── seeds/                          # Static reference data
     
 #  Getting Started
+
 Prerequisites
 Snowflake Account (will create one if doesn't exist)
 
 Python Environment
 
 Python 3.12 or higher
+
 pip or uv package manager
 **AWS Account (will create one if doesn't exist) ** (for S3 storage)
 
 Installation
+
 Clone the Repository
 
 git clone <repository-url>
+
 cd AWS_DBT_Snowflake
+
 Create Virtual Environment
 
 python -m venv .venv
@@ -189,10 +196,13 @@ listings.csv → AIRBNB.STAGING.LISTINGS
  # Usage
  
 Running dbt Commands
+
 Test Connection
 
 cd aws_dbt_snowflake_project
+
 dbt debug
+
 Install Dependencies
 
 dbt deps
@@ -252,67 +262,92 @@ Gold models → AIRBNB.GOLD.*
 # Data Quality
 
 Testing Strategy
+
 Source data validation tests
+
 Unique key constraints
+
 Not null checks
+
 Referential integrity tests
+
 Custom business rule tests
+
 Data Lineage
+
 dbt automatically tracks data lineage, showing:
 
 Upstream dependencies
+
 Downstream impacts
+
 Model relationships
+
 Source to consumption flow
 
 #  Security & Best Practices
 Credentials Management
 
-Never commit profiles.yml with credentials
-Use environment variables for sensitive data
-Implement role-based access control (RBAC) in Snowflake
-Code Quality
+Never commit profiles.yml with credentials,
+Use environment variables for sensitive data,
+Implement role-based access control (RBAC) in Snowflake,
+Code Quality,
 
-SQL formatting with sqlfmt
-Version control with Git
-Code reviews for model changes
-Performance Optimization
+SQL formatting with sqlfmt,
+Version control with Git,
+Code reviews for model changes,
+Performance Optimization,
 
-Incremental models for large datasets
-Ephemeral models for intermediate transformations
+Incremental models for large datasets,
+Ephemeral models for intermediate transformations,
 Appropriate clustering keys in Snowflake
 
 # Additional Resources
 dbt Documentation: https://docs.getdbt.com/
+
 Snowflake Documentation: https://docs.snowflake.com/
+
 dbt Best Practices: https://docs.getdbt.com/guides/best-practices
 
 # Contributing
 Fork the repository
+
 Create a feature branch (git checkout -b feature/AmazingFeature)
+
 Commit your changes (git commit -m 'Add some AmazingFeature')
+
 Push to the branch (git push origin feature/AmazingFeature)
+
 Open a Pull Request
 
 # License
+
 This project is part of a data engineering portfolio demonstration.
 
 # Author
 Project: Airbnb Data Engineering Pipeline
+
 Technologies: Snowflake, dbt, AWS, Python
 
 # Troubleshooting
 Common Issues
+
 Connection Error
 
 Verify Snowflake credentials in profiles.yml
+
 Check network connectivity
+
 Ensure warehouse is running
+
 Compilation Error
 
 Run dbt debug to check configuration
+
 Verify model dependencies
+
 Check Jinja syntax
+
 Incremental Load Issues
 
 Run dbt run --full-refresh to rebuild from scratch
@@ -320,9 +355,15 @@ Verify source data timestamps
 
 # Future Enhancements
  Add data quality dashboards
+ 
  Implement CI/CD pipeline
+ 
  Add more complex business metrics
+ 
  Integrate with BI tools (Tableau/Power BI)
+ 
  Add alerting and monitoring
+ 
  Implement data masking for PII
+ 
  Add more comprehensive testing suite
