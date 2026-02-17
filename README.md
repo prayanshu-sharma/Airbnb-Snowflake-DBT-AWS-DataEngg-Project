@@ -5,12 +5,16 @@ This project implements a complete end-to-end data engineering pipeline for Airb
 
 The pipeline processes Airbnb listings, bookings, and hosts data through a medallion architecture (Bronze → Silver → Gold), implementing incremental loading, slowly changing dimensions (SCD Type 2), and creating analytics-ready datasets.
 
-🏗️ Architecture
+
+# Architecture
+
 Data Flow
 Source Data (CSV) → AWS S3 → Snowflake (Staging) → Bronze Layer → Silver Layer → Gold Layer
                                                            ↓              ↓           ↓
                                                       Raw Tables    Cleaned Data   Analytics
-Technology Stack
+                                                      
+# Technology Stack
+
 Cloud Data Warehouse: Snowflake
 Transformation Layer: dbt (Data Build Tool)
 Cloud Storage: AWS S3 (implied)
@@ -22,33 +26,42 @@ Snapshots (SCD Type 2)
 Custom macros
 Jinja templating
 Testing and documentation
-📊 Data Model
+
+# Data Model
+
 Medallion Architecture
+
 🥉 Bronze Layer (Raw Data)
 Raw data ingested from staging with minimal transformations:
 
 bronze_bookings - Raw booking transactions
 bronze_hosts - Raw host information
 bronze_listings - Raw property listings
+
 🥈 Silver Layer (Cleaned Data)
 Cleaned and standardized data:
 
 silver_bookings - Validated booking records
 silver_hosts - Enhanced host profiles with quality metrics
 silver_listings - Standardized listing information with price categorization
+
 🥇 Gold Layer (Analytics-Ready)
 Business-ready datasets optimized for analytics:
 
 obt (One Big Table) - Denormalized fact table joining bookings, listings, and hosts
 fact - Fact table for dimensional modeling
 Ephemeral models for intermediate transformations
-Snapshots (SCD Type 2)
+
+# Snapshots (SCD Type 2)
+
 Slowly Changing Dimensions to track historical changes:
 
 dim_bookings - Historical booking changes
 dim_hosts - Historical host profile changes
 dim_listings - Historical listing changes
-📁 Project Structure
+
+ # Project Structure
+ 
 AWS_DBT_Snowflake/
 ├── README.md                           # This file
 ├── pyproject.toml                      # Python dependencies
@@ -106,7 +119,8 @@ AWS_DBT_Snowflake/
     │   └── source_tests.sql
     │
     └── seeds/                          # Static reference data
-🚀 Getting Started
+    
+#  Getting Started
 Prerequisites
 Snowflake Account (will create one if doesn't exist)
 
@@ -166,7 +180,9 @@ Load CSV files from SourceData/ to Snowflake staging schema:
 bookings.csv → AIRBNB.STAGING.BOOKINGS
 hosts.csv → AIRBNB.STAGING.HOSTS
 listings.csv → AIRBNB.STAGING.LISTINGS
-🔧 Usage
+
+ # Usage
+ 
 Running dbt Commands
 Test Connection
 
@@ -196,7 +212,9 @@ dbt docs serve
 Build Everything
 
 dbt build  # Runs models, tests, and snapshots
-🎯 Key Features
+
+# Key Features
+
 1. Incremental Loading
 Bronze and silver models use incremental materialization to process only new/changed data:
 
@@ -225,7 +243,9 @@ Automatic schema separation by layer:
 Bronze models → AIRBNB.BRONZE.*
 Silver models → AIRBNB.SILVER.*
 Gold models → AIRBNB.GOLD.*
-📈 Data Quality
+
+# Data Quality
+
 Testing Strategy
 Source data validation tests
 Unique key constraints
@@ -239,7 +259,8 @@ Upstream dependencies
 Downstream impacts
 Model relationships
 Source to consumption flow
-🔐 Security & Best Practices
+
+#  Security & Best Practices
 Credentials Management
 
 Never commit profiles.yml with credentials
@@ -255,24 +276,27 @@ Performance Optimization
 Incremental models for large datasets
 Ephemeral models for intermediate transformations
 Appropriate clustering keys in Snowflake
-📚 Additional Resources
+
+# Additional Resources
 dbt Documentation: https://docs.getdbt.com/
 Snowflake Documentation: https://docs.snowflake.com/
 dbt Best Practices: https://docs.getdbt.com/guides/best-practices
-🤝 Contributing
+
+# Contributing
 Fork the repository
 Create a feature branch (git checkout -b feature/AmazingFeature)
 Commit your changes (git commit -m 'Add some AmazingFeature')
 Push to the branch (git push origin feature/AmazingFeature)
 Open a Pull Request
-📝 License
+
+# License
 This project is part of a data engineering portfolio demonstration.
 
-👤 Author
+# Author
 Project: Airbnb Data Engineering Pipeline
 Technologies: Snowflake, dbt, AWS, Python
 
-🐛 Troubleshooting
+# Troubleshooting
 Common Issues
 Connection Error
 
@@ -288,7 +312,8 @@ Incremental Load Issues
 
 Run dbt run --full-refresh to rebuild from scratch
 Verify source data timestamps
-📊 Future Enhancements
+
+# Future Enhancements
  Add data quality dashboards
  Implement CI/CD pipeline
  Add more complex business metrics
