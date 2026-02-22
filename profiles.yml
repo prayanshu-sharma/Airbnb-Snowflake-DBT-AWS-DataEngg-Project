@@ -1,0 +1,13 @@
+dbt_snowflake_aws_project:
+  outputs:
+    dev:
+      account: TPWFGIP-DJ72811
+      database: AIRBNB
+      password: DataEngineer2026 
+      role: ACCOUNTADMIN
+      threads: 1
+      type: snowflake
+      user: prayanshu
+      warehouse: SNOWFLAKE_LEARNING_WH
+      schema: bronze
+  target: dev
