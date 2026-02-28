@@ -17,6 +17,9 @@ Try running the following commands:
 # Airbnb-Snowflake-DBT-AWS-DataEngg-Project
 Build end to end data engg project using these tools DBT,AWS and SNOWFLAKE.
 
+<img width="1101" height="580" alt="NETFLIX SNOWFLAKE DBT PROJECT" src="https://github.com/user-attachments/assets/a3317699-e11f-4fca-8610-a48886ed2e2c" />
+
+
 # Overview
 This project implements a complete end-to-end data engineering pipeline for Airbnb data using modern cloud technologies. The solution demonstrates best practices in data warehousing, transformation, and analytics using Snowflake, dbt (Data Build Tool), and AWS.
 
