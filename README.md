@@ -7,12 +7,6 @@ Try running the following commands:
 - dbt test
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 =======
 # Airbnb-Snowflake-DBT-AWS-DataEngg-Project
 Build end to end data engg project using these tools DBT,AWS and SNOWFLAKE.
@@ -170,9 +164,6 @@ Create Virtual Environment
 
 python -m venv .venv
 .venv\Scripts\Activate.ps1  # Windows PowerShell
-# or
-source .venv/bin/activate    # Linux/Mac
-Install Dependencies
 
 pip install -r requirements.txt
 # or using pyproject.toml
@@ -321,13 +312,6 @@ Incremental models for large datasets,
 Ephemeral models for intermediate transformations,
 Appropriate clustering keys in Snowflake
 
-# Additional Resources
-dbt Documentation: https://docs.getdbt.com/
-
-Snowflake Documentation: https://docs.snowflake.com/
-
-dbt Best Practices: https://docs.getdbt.com/guides/best-practices
-
 # Contributing
 Fork the repository
 
@@ -386,4 +370,4 @@ Verify source data timestamps
  Implement data masking for PII
  
  Add more comprehensive testing suite
->>>>>>> 64e8807ebf51333052b3021f69bb815722594cdd
+
